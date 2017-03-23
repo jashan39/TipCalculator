@@ -2,6 +2,4 @@
 Calculates the total bill, total tip and splits the amount per person 
 
 
-
-
-![Alt text](C:\Users\Navjashan\Pictures\Screenshots\tip.png "App")
+[![tip.png](https://s15.postimg.org/z5cp0qxcr/tip.png)](https://postimg.org/image/62yexxb2v/)

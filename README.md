@@ -1,5 +1,4 @@
 # TipCalculator
 Calculates the total bill, total tip and splits the amount per person 
 
-
-[![tip.png](https://s15.postimg.org/z5cp0qxcr/tip.png)](https://postimg.org/image/62yexxb2v/)
+[![Screenshot (109).png](https://s24.postimg.org/fzq0c7wnp/Screenshot_109.png)](https://postimg.org/image/herl0xxqp/)

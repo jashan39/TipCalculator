@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity {
         billSplit.setText(String.valueOf(split));
         if(split > 0) {
             double totalSplit = payable / split;
-            splitResult.setText(String.format("%.2f", totalSplit));
+            splitResult.setText("$" + String.format("%.2f", totalSplit));
         }
 
         else{
             double totalSplit = payable;
-            splitResult.setText(String.format("%.2f", totalSplit));
+            splitResult.setText("$" + String.format("%.2f", totalSplit));
         }
     }
 
@@ -90,15 +90,15 @@ public class MainActivity extends AppCompatActivity {
             double payAmount = Double.valueOf(numpad);
             double totaltip = Double.valueOf(tip) * payAmount * 0.01;
             payable = payAmount + totaltip;
-            totalToPay.setText(String.format("%.2f", payable));
-            tipResult.setText(String.format("%.2f", totaltip));
+            totalToPay.setText("$" + String.format("%.2f", payable));
+            tipResult.setText("$" + String.format("%.2f", totaltip));
         }
         else{
             double payAmount = 0;
             double totaltip = Double.valueOf(tip) * payAmount * 0.01;
             payable = payAmount + totaltip;
-            totalToPay.setText(String.format("%.2f", payable));
-            tipResult.setText(String.format("%.2f", totaltip));
+            totalToPay.setText("$" + String.format("%.2f", payable));
+            tipResult.setText("$" + String.format("%.2f", totaltip));
         }
     }
 

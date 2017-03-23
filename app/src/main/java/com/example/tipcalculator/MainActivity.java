@@ -3,6 +3,7 @@ package com.example.tipcalculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -92,6 +93,37 @@ public class MainActivity extends AppCompatActivity {
             totalToPay.setText(String.format("%.2f", payable));
             tipResult.setText(String.format("%.2f", totaltip));
         }
+        else{
+            double payAmount = 0;
+            double totaltip = Double.valueOf(tip) * payAmount * 0.01;
+            payable = payAmount + totaltip;
+            totalToPay.setText(String.format("%.2f", payable));
+            tipResult.setText(String.format("%.2f", totaltip));
+        }
+    }
+
+
+    public void updateUI(){
+            totalBiller = "";
+
+            if(numpad!="")
+                totalBiller = dollar + numpad + ".00";
+
+            else
+                totalBiller = dollar + "0.00";
+
+            totalBillValue.setText(totalBiller);
+            updateTip();
+            updateSplit();
+     }
+
+
+    public void pressButton(View view){
+        if(numpad.length() < 3) {
+            Button num = (Button) view;
+            numpad = numpad + num.getText().toString();
+            updateUI();
+        }
     }
 
     public void buttonReset(View view){
@@ -101,95 +133,23 @@ public class MainActivity extends AppCompatActivity {
         totalToPay.setText("0");
         tipResult.setText("0");
         splitResult.setText("0");
-        numpad = "";
+        numpad = "0";
         tip = 0;
         payable = 0;
         split = 0;
     }
 
-
-
-    public void updateUI(){
-        if(numpad.length() < 4) {
-            totalBiller = "";
-            totalBiller = dollar + numpad + ".00";
-            totalBillValue.setText(totalBiller);
-            updateTip();
-            updateSplit();
-        }
-    }
-
-    String button1(View view){
-        numpad = numpad + "1";
-        updateUI();
-        return "1";
-    }
-
-    String button2(View view){
-        numpad = numpad + "2";
-        updateUI();
-        return "2";
-    }
-
-    String button3(View view){
-        numpad = numpad + "3";
-        updateUI();
-        return "3";
-    }
-
-    String button4(View view){
-        numpad = numpad + "4";
-        updateUI();
-        return "4";
-    }
-
-    String button5(View view){
-        numpad = numpad + "5";
-        updateUI();
-        return "5";
-    }
-
-    String button6(View view){
-        numpad = numpad + "6";
-        updateUI();
-        return "6";
-    }
-
-    String button7(View view){
-        numpad = numpad + "7";
-        updateUI();
-        return "7";
-    }
-
-    String button8(View view){
-        numpad = numpad + "8";
-        updateUI();
-        return "8";
-    }
-
-    String button9(View view){
-        numpad = numpad + "9";
-        updateUI();
-        return "9";
-    }
-
-    String button0(View view){
-        numpad = numpad + "0";
-        updateUI();
-        return "0";
-    }
-
-    void buttonDel(View view){
+    public void buttonDel(View view){
         if(numpad.length() > 1) {
             numpad = numpad.substring(0, numpad.length() - 1);
             updateUI();
         }
 
         else{
-            buttonReset(view);
+            numpad = "";
+            payable = 0;
+            updateUI();
         }
     }
-
-
 
 }

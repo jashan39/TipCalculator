@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         totalToPay.setText("0");
         tipResult.setText("0");
         splitResult.setText("0");
-        numpad = "0";
+        numpad = "";
         tip = 0;
         payable = 0;
         split = 0;
